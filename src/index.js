@@ -18,9 +18,9 @@ const padTo32 = function(msg) {
 }
 
 const bip32PublicToEthereumPublic = function(pubKey) {
-  let key = ec.keyFromPublic(pubKey).getPublic().toJSON();
+  let key = ec.keyFromPublic(pubKey).getPublic().toJSON()
 
-  return Buffer.concat([padTo32(new Buffer(key[0].toArray())), padTo32(new Buffer(key[1].toArray()))]);
+  return Buffer.concat([padTo32(new Buffer(key[0].toArray())), padTo32(new Buffer(key[1].toArray()))])
 }
 
 const toHD = function (zprv, network) {
@@ -106,7 +106,7 @@ fromZPrv.prototype.getAddress = function(index, isChange) {
     , pubKey = bip32.fromBase58(this.zprv.toString()).derive(change).derive(index).publicKey
     , address = pubToAddress(bip32PublicToEthereumPublic(pubKey))
 
-  return `0x${address.toString('hex')}`;
+  return `0x${address.toString('hex')}`
 }
 
 function fromZPub(zpub) {
