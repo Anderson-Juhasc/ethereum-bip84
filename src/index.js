@@ -1,7 +1,7 @@
 const { pubToAddress } = require('ethereumjs-util')
     , { bip32, networks } = require('bitcoinjs-lib')
     , b58 = require('bs58check')
-		, ec = require('elliptic').ec('secp256k1')
+    , ec = require('elliptic').ec('secp256k1')
     , bip39 = require('bip39')
     , pubTypes = { zprv: '04b2430c', zpub: '04b24746' }
 
@@ -70,18 +70,18 @@ fromMnemonic.prototype.deriveAccount = function(index, changePurpose) {
 }
 
 function fromZPrv(zprv) {
-	this.zprv = toHD(zprv, networks.bitcoin.bip32.private)
+  this.zprv = toHD(zprv, networks.bitcoin.bip32.private)
 }
 
 fromZPrv.prototype.getAccountPrvKey = function() { 
-	let prv = bip32.fromBase58(this.zprv).toBase58()
+  let prv = bip32.fromBase58(this.zprv).toBase58()
     , masterKey = b58Encode(prv, pubTypes.zprv)
 
 	return masterKey
 }
 
 fromZPrv.prototype.getAccountPubKey = function() {
-	let pub = bip32.fromBase58(this.zprv).neutered().toBase58()
+  let pub = bip32.fromBase58(this.zprv).neutered().toBase58()
     , masterKey = b58Encode(pub, pubTypes.zpub)
 
 	return masterKey
@@ -110,11 +110,11 @@ fromZPrv.prototype.getAddress = function(index, isChange) {
 }
 
 function fromZPub(zpub) {
-	this.zpub = toHD(zpub, networks.bitcoin.bip32.public)
+  this.zpub = toHD(zpub, networks.bitcoin.bip32.public)
 }
 
 fromZPub.prototype.getAccountPubKey = function() {
-	let pub = bip32.fromBase58(this.zpub).neutered().toBase58()
+  let pub = bip32.fromBase58(this.zpub).neutered().toBase58()
     , masterKey = b58Encode(pub, pubTypes.zpub)
 
 	return masterKey
