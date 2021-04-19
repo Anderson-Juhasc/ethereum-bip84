@@ -84,7 +84,7 @@ fromZPrv.prototype.getAccountPubKey = function() {
   let pub = bip32.fromBase58(this.zprv).neutered().toBase58()
     , masterKey = b58Encode(pub, pubTypes.zpub)
 
-	return masterKey
+  return masterKey
 }
 
 fromZPrv.prototype.getPrvKey = function(index, isChange) {
@@ -117,7 +117,7 @@ fromZPub.prototype.getAccountPubKey = function() {
   let pub = bip32.fromBase58(this.zpub).neutered().toBase58()
     , masterKey = b58Encode(pub, pubTypes.zpub)
 
-	return masterKey
+  return masterKey
 }
 
 fromZPub.prototype.getPubKey = function(index, isChange) {
