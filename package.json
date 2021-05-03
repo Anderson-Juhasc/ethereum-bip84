@@ -5,7 +5,7 @@
   "main": "./src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Anderson-Juhasc/litecoin-bip84"
+    "url": "https://github.com/Anderson-Juhasc/ethereum-bip84"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

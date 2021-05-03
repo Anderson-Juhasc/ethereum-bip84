@@ -9,7 +9,7 @@ Run - `npm install ethereum-bip84 --save`
 ## Using
 
 ```javascript
-const { fromMnemonic, fromZPrv, fromZPub } = require('dogecoin-bip84')
+const { fromMnemonic, fromZPrv, fromZPub } = require('ethereum-bip84')
 
 var mnemonic = 'abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about'
 var root = new fromMnemonic(mnemonic, '')
