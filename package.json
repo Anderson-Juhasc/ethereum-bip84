@@ -1,6 +1,6 @@
 {
   "name": "ethereum-bip84",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Creates BIP84 keychains for Ethereum",
   "main": "./src/index.js",
   "repository": {
