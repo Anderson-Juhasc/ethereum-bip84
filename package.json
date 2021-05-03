@@ -1,19 +1,25 @@
 {
-  "name": "bip44-ethereum",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "ethereum-bip84",
+  "version": "0.0.1",
+  "description": "Creates BIP84 keychains for Ethereum",
+  "main": "./src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Anderson-Juhasc/litecoin-bip84"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "ethereum",
+    "hd",
+    "wallet",
+    "bip84"
+  ],
+  "author": "Anderson Juhasc",
   "license": "ISC",
   "dependencies": {
-    "bip39": "^3.0.3",
-    "bip44": "0.0.1",
-    "bitcoinjs-lib": "^5.2.0",
-    "bs58check": "^2.1.2",
+    "bip84": "^0.2.5",
     "elliptic": "^6.5.4",
     "ethereumjs-util": "^7.0.10"
   }
