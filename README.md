@@ -1,6 +1,6 @@
 # Ethereum BIP84
 
-Creates BIP84 keychains for Litecoin mainnet and testnet
+Creates BIP84 keychains for Ethereum
 
 ## Installing
 
