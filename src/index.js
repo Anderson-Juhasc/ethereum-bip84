@@ -5,10 +5,10 @@ const { pubToAddress } = require('ethereumjs-util')
     , BIP84 = require('bip84')
 
 function fromMnemonic(mnemonic, password, isTestnet) {
-  BIP84.fromSeed.call(this, mnemonic, password, isTestnet, 60)
+  BIP84.fromMnemonic.call(this, mnemonic, password, isTestnet, 60)
 }
 
-fromMnemonic.prototype = Object.create(BIP84.fromSeed.prototype)
+fromMnemonic.prototype = Object.create(BIP84.fromMnemonic.prototype)
 
 function fromZPrv(zprv) {
   BIP84.fromZPrv.call(this, zprv)
@@ -62,7 +62,7 @@ fromZPub.prototype.getAddress = function(index, isChange) {
 
 const padTo32 = function(msg) {
   while (msg.length < 32) {
-    msg = Buffer.concat([new Buffer([0]), msg])
+    msg = Buffer.concat([Buffer.from([0]), msg])
   }
 
   if (msg.length !== 32) {
@@ -75,7 +75,7 @@ const padTo32 = function(msg) {
 const bip32PublicToEthereumPublic = function(pubKey) {
   let key = ec.keyFromPublic(pubKey).getPublic().toJSON()
 
-  return Buffer.concat([padTo32(new Buffer(key[0].toArray())), padTo32(new Buffer(key[1].toArray()))])
+  return Buffer.concat([padTo32(Buffer.from(key[0].toArray())), padTo32(Buffer.from(key[1].toArray()))])
 }
 
 module.exports = {
